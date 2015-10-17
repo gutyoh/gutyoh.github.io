@@ -1,0 +1,68 @@
+<div ng-if="!details">
+  Loading results...
+</div>
+
+<div ng-if="details.Response==='True'">
+
+  <span class="span-outer">
+    <a href="http://imdb.com/title/{{ details.imdbID }}" target="_blank">{{ details.Title }}</a>
+  </span>, {{ details.Year }}
+
+  <p><strong>Fecha de estreno:</strong> {{ details.Released }} ({{ details.Runtime }})</p>
+
+  <div ng-repeat="movie in movies">
+      <div ng-if="details.Title === movie.MovieTitle">
+        <img ng-src ="{{movie.Cover}}" class="thumbnail img-responsive thumbnail animated flip">
+        <p><strong>Review escrito por el Doctor Edwin Ara&uacute;z:</strong></p>
+        <p class="text-justify">{{ movie.Review | limitTo:numLimit}}{{movie.Review.length > numLimit ? '...' : ''}}</p>
+        <button class="btn-purple" ng-click="readMore()">Leer m&aacute;s</button>
+        <button class="btn-facebook" ng-click="cerrar()">Cerrar</button>
+      </div>
+  </div>
+
+  <p class="outer-p">
+    <div class="inner-p">
+      <span class="label label-primary">Directores :</span> {{ details.Director }}
+    </div>
+    <div class="inner-p">
+      <span class="label label-primary">Actores :</span> {{ details.Actors }}
+    </div>
+    <div class="inner-p">
+      <span class="label label-primary">G&eacute;nero :</span> {{ details.Genre }}
+    </div>
+  </p>
+
+  <p class="outer-p-2">Ratings:<br>
+    <strong>IMDb Rating</strong>: <span class="label label-success">{{ details.imdbRating }}</span><br>
+  <div ng-if="details.tomatoRating < 3.0">
+    <img ng-src ="{{rottenIcon}}">
+    <strong>Rotten Tomatoes</strong>: <span class="label label-success">{{ details.tomatoRating }}</span>
+  </div>
+  <div ng-if="details.tomatoRating > 4.0 && details.tomatoRating < 6.5">
+    <img ng-src ="{{tomatoIcon}}">
+    <strong>Rotten Tomatoes</strong>: <span class="label label-success">{{ details.tomatoRating }}</span>
+  </div>
+  <div ng-if="details.tomatoRating >= 6.5">
+    <img ng-src ="{{freshIcon}}">
+    <strong>Rotten Tomatoes</strong>: <span class="label label-success">{{ details.tomatoRating }}</span>
+  </div>
+  </p>
+
+  <p class="outer-p-3">
+    <a ng-href="https://www.youtube.com/results?search_query={{ details.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Buscar Trailers!</a>
+    <!--<span class="divider"></span>
+    <a ng-href="http://subscene.com/subtitles/title?q={{ details.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Get Subtitles!</a>
+    <span class="divider"></span>
+    <a ng-href="http://www.theost.com/search/custom/?key={{ details.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Hear Soundtracks!</a>
+    <span class="divider"></span>
+    <a ng-href="http://www.amazon.in/s/ref=nb_sb_noss_1?url=search-alias%3Ddvd&field-keywords={{ details.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Buy this movie!</a>-->
+  </p>
+
+  <img ng-src="{{ details.Poster=='N/A' ? 'http://placehold.it/150x220&text=N/A' : 'http://imdb.wemakesites.net/api/1.0/img/?url='+details.Poster }}" class="thumbnail img-responsive img-circle flip">
+
+</div>
+
+<div ng-if="details.Response ==='False'">
+  No existen resultados.
+
+</div>

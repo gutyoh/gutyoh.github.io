@@ -6,29 +6,45 @@
     <link rel="stylesheet" type="text/css" href="css/custom.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 
 
   </head>
 
+
   <body class="fondoPrueba">
-    <div class="container-fluid outerdiv">
-      <nav class="navbar navbar-custom navbar-fixed-top">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#"><b>dr. edwin</b> <span class="span-style">Reviews</span></a>
-          </div>
-          <div>
-            <a class="navbar-brand navbar-right" href="http://gutyoh.asuscomm.com:8000">Login</a>
-          </div>
-        </div>
-      </nav>
+  <div class="container-fluid outerdiv">
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><b>dr. edwin</b> Reviews</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="http://gutyoh.asuscomm.com:8000"><b>Login</b></a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+  </div>
 
       <noscript>
         <div class="nojs">Javascript is either disabled or not supported in your browser. Please enable it or use a Javascript enabled browser.</div>
       </noscript>
+
+      <div class="container-fluid">
 
       <div class="animated zoomInRight">
         <div class="input-group search-bar">
@@ -40,12 +56,14 @@
 
         <div id="related-results" ng-include="'partials/related-results.html'" class="col-md-4 animated bounce related-results"></div>
       </div>
-    </div>
+      </div>
 
     <script src="js/angular.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/angular-sanitize.min.js"></script>
     <script src="js/app.js"></script>
+    <script type="text/javascript" src="js/reveal-it.js"></script>
+    <script type="text/javascript" src="js/scrolling-nav.js"></script>
     <script src="js/filter.js"></script>
   </body>
 </html>

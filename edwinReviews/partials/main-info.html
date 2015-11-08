@@ -12,7 +12,7 @@
 
   <div ng-repeat="x in pelis">
       <div ng-if="x.movie_title == details.Title">
-        <img ng-src ="http://gutyoh.asuscomm.com:8000/images/{{x.review_id}}.png" class="thumbnail img-responsive thumbnail animated flip">
+        <img ng-src ="http://gutyoh.asuscomm.com:8000/images/{{x.review_id}}.jpeg" class="thumbnail img-responsive thumbnail animated flip">
         <p><strong>Review escrito por el Doctor Edwin Ara&uacute;z:</strong></p>
         <p class="text-justify">
           <span ng-bind-html="x.movie_review | limitTo:numLimit"></span>{{x.movie_review.length > numLimit ? '...' : ''}}
